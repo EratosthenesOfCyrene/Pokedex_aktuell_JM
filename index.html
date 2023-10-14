@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex_JM_SPEICHERFUNKTION</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="scripttools.js"></script>
+    <script src="details.js"></script>
+</head>
+
+<body onload="start()">
+
+    <div id="background"
+        onclick="backGroundDNone(event), removePokedexColor(), testIfIsFilterPokemonsExecuted(),  DNone('background-2-list', 'remove'), DNone('red-heart', 'add'), DNone('black-heart', 'remove'), showBackForwardBtns()"
+        class="d-none">
+        <div id="card" onclick="stopPropagation(event)" class="d-none">
+            <div id="pokedex">
+                <div id="top-cont">
+                    <div class="like-close-div">
+                        <span
+                            onclick="backGroundDNone(event), removePokedexColor(), testIfIsFilterPokemonsExecuted(), DNone('background-2-list', 'remove'), showBackForwardBtns()"
+                            class="back"><img src="img/back_SW.png" class="back-img" alt=""></span>
+                        <span id="heart-img-div">
+                            <img onclick="addToFavourites(), showAmountOfFavourites()" id="black-heart"
+                                src="img/heart.png" class="back-img" alt="">
+                            <img id="red-heart" src="img/heart_red.jpg" class="back-img d-none" alt="">
+                        </span>
+                    </div>
+                    <div id="back-forward-div" class="back-forward-div">
+                        <span onclick="precededPokemon()" id="">
+                            <div class="arrow-symbol-cont"> <b class="arrow-symbol">
+                                    < </b>
+                            </div>
+                        </span>
+                        <span onclick="nextPokemon()" id="forward-arrow">
+                            <div class="arrow-symbol-cont"> <b class="arrow-symbol">></b> </div>
+                        </span>
+                    </div>
+                </div>
+                <h2 id="pokemonName"> </h2>
+                <div id="pokemon-image">
+                    <img id="pokemon-img_front" src="" alt="">
+
+                    <div id="info-container">
+                        <div id="nav">
+                            <span
+                                onclick="DNone('about', 'remove'), DNone('stats', 'add'), DNone('evolution', 'add'), DNone('moves', 'add'), underline('nav-item_1', 'add'), underline('nav-item_2', 'remove'), underline('nav-item_3', 'remove'), underline('nav-item_4', 'remove')"
+                                id="nav-item_1" class="nav-item nav-item-onclicked"> <b>About</b></span>
+                            <span
+                                onclick="DNone('stats', 'remove'), DNone('about', 'add'), DNone('evolution', 'add'), DNone('moves', 'add'), underline('nav-item_2', 'add'), underline('nav-item_1', 'remove'), underline('nav-item_3', 'remove'), underline('nav-item_4', 'remove')"
+                                id="nav-item_2" class="nav-item"> <b>Base Stats</b></span>
+                            <span
+                                onclick="DNone('evolution', 'remove'), DNone('about', 'add'), DNone('stats', 'add'), DNone('moves', 'add'), underline('nav-item_3', 'add'), underline('nav-item_1', 'remove'), underline('nav-item_2', 'remove'), underline('nav-item_4', 'remove')"
+                                id="nav-item_3" class="nav-item"> <b>Type</b></span>
+                            <span
+                                onclick="DNone('moves', 'remove'), DNone('evolution', 'add'), DNone('stats', 'add'), DNone('about', 'add'), underline('nav-item_4', 'add'), underline('nav-item_1', 'remove'), underline('nav-item_2', 'remove'), underline('nav-item_3', 'remove')"
+                                id="nav-item_4" class="nav-item"> <b>Moves</b></span>
+                        </div>
+
+
+
+                        <!--"About-Section"-->
+                        <div id="about">
+                            <div class="about-sub">
+                                <div class="about-sub1"> <b>Species</b> </div>
+                                <div id="about-species" class="about-sub-2"> </div>
+                            </div>
+
+                            <div class="about-sub">
+                                <div class="about-sub1"> <b>Height:</b> </div>
+                                <div id="about-height" class="about-sub-2"> </div> "
+                            </div>
+
+                            <div class="about-sub">
+                                <div class="about-sub1"> <b>Weight</b> </div>
+                                <div id="about-weight" class="about-sub-2"> </div> lbs
+                            </div>
+
+                            <div class="about-sub">
+                                <div class="about-sub1"> <b>Abilities</b> </div>
+                                <div id="about-abilities" class="about-sub-2"> </div>
+                            </div>
+
+                            <div class="about-sub">
+                                <div class="about-sub1"> <b></b> </div>
+                                <div id="about-items" class="about-sub-2"> </div>
+                            </div>
+                        </div>
+
+
+
+                        <!--"Stats"-Sektion-->
+                        <div id="stats" class="d-none"></div>
+
+
+                        <!--"Evolution"-Sektion-->
+                        <div id="evolution" class="d-none"></div>
+
+
+
+                        <!--"Moves"-Sektion-->
+                        <div id="moves" class="d-none"></div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <header class="header">Pokedex</header>
+        <input id="input" onkeydown="testEnter(event), DNone('no-favourites', 'add')" type="text"
+            placeholder="Pokemon suchen...">
+
+        <span class="favourites">
+            <span
+                onclick=" DNone('background', 'add'), DNone('background-2-list', 'remove'), loadFavouritesList(), DNone('back-to-list-of-all-pokemons', 'remove'), showNoFavouritesWindow()"
+                class="favourites-list">Favoriten
+                <img src="img/heart.png" class="favouriten-liste-img" alt="">
+            </span>
+            <div id="amount-of-favourites-div"></div>
+        </span>
+
+        <button
+            onclick="loadPokemonList(), testIfIsFavouriteListExecuted(), DNone('back-to-list-of-all-pokemons', 'add'), DNone('no-favourites', 'add')"
+            id="back-to-list-of-all-pokemons" class="back-to-list-of-all-pokemons d-none">zurück zur Liste</button>
+    </div>
+    <div id="background-2-list" class="background-2-list">
+
+    </div>
+
+
+
+
+    <!--Loading-Screen-->
+    <div id="loading-screen" class="d-none">
+
+        <div id="loading-image">
+            <img src="img/pokeball.png" alt="">
+        </div>
+
+        <div id="loading-screen-text">
+            Loading...
+        </div>
+
+    </div>
+
+
+
+
+    <!--No favourites available-->
+    <div id="no-favourites" class="d-none">
+        Keine Favoriten vorhanden
+    </div>
+
+
+    <!--No matches-->
+    <div id="no-matches" class="d-none">
+        Es gibt leider keine mit Deinem Suchbegriff übereinstimmenden Pokemons
+
+        <button
+            onclick="loadPokemonList(), testIfIsFavouriteListExecuted(), DNone('no-matches-btn', 'add'), DNone('no-matches', 'add')"
+            id="no-matches-btn" class="back-to-list-of-all-pokemons d-none">zurück zur Liste</button>
+    </div>
+
+
+
+
+
+
+
+
+
+    <!--Mobile-Design-->
+
+
+    <!--Burger-Menu-->
+    <div onclick="expandBurgerMenu()" class="burger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+
+    <!--expanded Burger-Menu-->
+    <div id="expanded-burger-menu-around" class="expanded-burger-menu-around d-none">
+
+        <div onclick="DNone('expanded-burger-menu-around', 'add'), DNone('input-2-container', 'add')" class="circle">
+            <div class="x">+</div>
+        </div>
+
+        <div id="expanded-burger-menu" class="expanded-burger-menu d-none">
+            <div onclick="DNone('input-2-container', 'remove')" class="expanded-menu-1">Suchen</div>
+
+            <div id="input-2-container" class="input-2-container d-none">
+                <input id="input-2" type="text" placeholder="Pokemon suchen...">
+                <button class="search-btn"
+                    onclick="mobileSearch(), DNone('no-favourites', 'add'), DNone('input-2-container', 'add'), DNone('expanded-burger-menu-around', 'add')">
+                    Suchen
+                </button>
+            </div>
+            <div class="between-div"></div>
+            <div onclick="DNone('expanded-burger-menu-around', 'add'), DNone('background', 'add'), DNone('background-2-list', 'remove'), loadFavouritesList(), DNone('back-to-list-of-all-pokemons', 'remove'), DNone('input-2-container', 'add'), showNoFavouritesWindow()"
+                class="expanded-menu-1">Favoriten</div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="d-none">
+        <div>https://pokeapi.co/docs/v2#pokemon-section</div>
+
+        <!--Liste aller Pokemons mit id-->
+        <div> https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0 </div>
+
+        <!--Liste aller Pokemons mit id-->
+        <div> https://pokeapi.co/api/v2/pokemon-species/ </div>
+    </div>
+
+</body>
+
+</html>

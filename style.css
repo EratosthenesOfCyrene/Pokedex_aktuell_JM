@@ -1,0 +1,698 @@
+
+
+body {
+    margin: 0;
+
+    font-family: 'calibri';
+}
+
+/* Die Scrollleiste selbst */
+body::-webkit-scrollbar {
+    width: 20px; /* Breite der Scrollleiste */
+  }
+
+  /* Der Schieber (Daumen) der Scrollleiste */
+  body::-webkit-scrollbar-thumb {
+    background-color: #fafa30; /* Hintergrundfarbe des Schiebers */
+    border: 1.2px black solid;
+    border-radius: 3px;
+  }
+  
+  /* Der Hintergrund der Scrollleiste */
+  body::-webkit-scrollbar-track {
+    background-color: #90906a; /* Hintergrundfarbe der Scrollleiste */
+  }
+  
+  /* Änderung des Schiebers bei Hover */
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: #e6e65e; /* Hintergrundfarbe des Schiebers bei Hover */
+  }
+
+  /* Änderung des Schiebers beim Klicken */
+  body::-webkit-scrollbar-thumb:active {
+    background-color: #70701b; /* Hintergrundfarbe des Schiebers beim Klicken */
+  }
+
+
+.d-none {
+    display: none !important;
+}
+
+#background {
+    height: 100vh;
+    background-color: rgb(247, 246, 246);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 90px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    height: 90px;
+    display: flex;
+    width: 100vw;
+    padding-left: 25vw;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 700;
+    background-color: #caca8c;
+    z-index: 3;
+}
+
+#input {
+    right: 160px;
+    position: fixed;
+    top: 35px;
+    height: 26px;
+    border-radius: 4px;
+    width: 20vw;
+    z-index: 4;
+    border: 3px solid #00e8ff;
+    font-size: 15px;
+}
+
+input::placeholder {
+    padding-left: 2px;
+}
+
+.btn {
+    position: absolute;
+}
+
+#card {
+    width: 300px;
+}
+
+.back-img {
+    height: 19px;
+    z-index: 3;
+    position: sticky;
+}
+
+.back-img:hover {
+    cursor: pointer !important;
+}
+
+.arrow-img {
+    height: 20px;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.arrow-img:hover {
+    cursor: pointer;
+}
+
+.arrow-symbol-cont {
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 29px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.arrow-symbol-cont:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.arrow-symbol {
+    padding-bottom: 2px;
+    padding-left: 1px;
+}
+
+#top-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    /*margin-top: 1.5vh;*/
+    margin-top: 11px;
+}
+
+.like-close-div {
+    width: 270px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.back-forward-div {
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    z-index: 2;
+}
+
+#pokemonName {
+    display: flex;
+    justify-content: center;
+}
+
+#pokedex {
+    /*min-height: 82vh;*/
+    min-height: 607px;
+    margin-bottom: 14vh;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+#pokemon-image {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+#pokemon-img_front {
+    object-fit: contain;
+    /*padding-bottom: 10vh;*/
+    padding-bottom: 74px;
+    /*height: 40.6vh;*/ /* vllt. wieder zurücksetzen*/
+    margin-top: 90px;
+    z-index: 1;
+}
+
+#pokemon-img_back {
+    object-fit: contain;
+    padding-bottom: 10vh;
+    height: 26vh;
+}
+
+#info-container {
+    background-color: white;
+    border-radius: 16px;
+    /*margin-top: -20vh;*/
+    margin-top: -147.5px;
+    height: 350px;
+    width: 300px;
+}
+
+#nav {
+    display: flex;
+    justify-content: space-around;
+    color: black;
+    padding-top: 8vh;
+    border-bottom: 3px solid rgb(237, 236, 236);
+    z-index: 2;
+    position: sticky;
+}
+
+.nav-item {
+    text-decoration: none;
+    /*padding-bottom: 3vh;*/
+    padding-bottom: 22.5px;
+    border-bottom: 3px rgba(220,160,140, 0) solid;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+    border-bottom: 3px solid blue;
+}
+
+.nav-item-onclicked {
+    border-bottom: 3px solid blue;
+}
+
+
+
+#about {
+    color: black;
+    padding-top:42px;
+}
+
+.about-sub {
+    display: flex;
+    padding: 0.95vh;
+    padding-left: 25px;
+}
+
+.about-sub1 {
+    width: 110px;
+}
+
+.width-150 {
+    width: 150px;
+}
+
+#moves {
+    color: black;
+    padding-top:42px;
+}
+
+#stats {
+    color: black;
+    padding-top:42px;
+}
+
+.stats-around {
+    display: flex;
+    align-items: center;
+}
+
+#evolution {
+    color: black;
+    padding-top: 42px;
+}
+
+#background-2-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #fdfdad;
+    margin-top: 90px;
+    min-height: calc(100vh - 90px);
+}
+
+.list {
+    width: 200px;
+    height:95px;
+    border: 2.2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.list:hover {
+    background-color: rgb(220, 220, 220);
+    cursor: pointer;
+}
+
+.list-favourites {
+    width: 200px;
+    height:95px;
+    border: 2.2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-favourites:hover {
+    background-color: rgb(220, 220, 220);
+    cursor: pointer;
+}
+
+.bg-normal{
+    background-color: grey;
+}
+
+.bg-ice {
+    background-color: rgb(168, 225, 250);
+}
+
+.bg-electric {
+    background-color: #faf608;
+    color: black !important;
+}
+
+.bg-dragon {
+    background-color: rgb(89, 255, 47);
+}
+
+.bg-water {
+    background-color: rgb(20, 62, 251);
+}
+
+.bg-psychic {
+    background-color: orange;
+}
+
+.bg-bug {
+    background-color: bisque;
+    color: black !important;
+}
+
+.bg-grass {
+    background-color: green;
+}
+
+.bg-fire {
+    background-color: rgb(255, 230, 0);
+    color: black !important;
+}
+
+.bg-rock {
+    background-color: rgb(179, 151, 151);
+}
+
+.bg-poison {
+    background-color: blueviolet;
+}
+
+.bg-fighting {
+    background-color: red;
+}
+
+.bg-ground {
+    background-color: brown;
+}
+
+.bg-fairy {
+    background-color: aquamarine;
+}
+
+.bg-else {
+    background-color: rgb(241, 112, 219);
+}
+
+.favourites {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 4;
+    right: 30px;
+    position: fixed;
+    top: 31px;
+    display: flex;
+    align-items: center;
+    width: 95px;
+    justify-content: space-between;
+}
+
+.favourites-list {
+   display: flex;
+}
+
+.favourites-list:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#amount-of-favourites-div {
+    z-index: 5;
+    font-size: 21px;
+    margin-bottom: 20px;
+    padding-left: 2px;
+}
+
+#amount-of-favourites-div:hover {
+    text-decoration: none !important;
+}
+
+.favouriten-liste-img {
+    height: 26px;
+    z-index: 4;
+    margin-left: 4px;
+}
+
+.back-to-list-of-all-pokemons {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    height: 32px;
+    width: 150px;
+    background-color: #d4c7b6;
+    border-radius: 4px;
+}
+
+.back-to-list-of-all-pokemons:hover {
+    cursor: pointer;
+    background-color: #debf98;
+}
+
+.delete-div {
+    background-color: red;
+    color: white;
+    width: 65px;
+    border-top: 2.2px solid black;
+    border-right: 2.2px solid black;
+    border-bottom: 2.2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dustbin-icon {
+    height: 42px;
+}
+
+.delete-div:hover {
+    cursor: pointer;
+    background-color: rgb(212, 21, 21);
+}
+
+.outer-list {
+    display: flex;
+    height: 98px;
+    margin: 20px;
+}
+
+.visibiliy-hidden {
+    visibility: hidden;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(128, 128, 128, 0.5);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11 !important;
+}
+
+#loading-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: inherit;
+    filter: blur(5px);
+}
+
+#loading-screen-text {
+    font-size: 30px;
+    color: white;
+    position: relative; /* Damit der Text über dem unscharfen Hintergrund angezeigt wird */
+    z-index: 1; /* Damit der Text über dem unscharfen Hintergrund liegt */
+
+    height: 40vh;
+    width: 70vw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#loading-image img {
+    width: 110px; 
+    height: 110px; 
+    animation: spin 2s linear infinite; /* Animation für die Rotation */
+    margin-top: 30vh;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#no-favourites {
+    position: absolute;
+    top: 90px;
+    bottom: 200px;
+    left: 0;
+    right: 0;
+    z-index: 41;
+    z-index: 41;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
+
+#no-matches {
+    position: absolute;
+    top: 90px;
+    bottom: 200px;
+    left: 0;
+    right: 0;
+    z-index: 41;
+    z-index: 41;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+}
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: fixed;
+    z-index: 51;
+    top: 23px;
+    right: 30px;
+
+    padding: 8px;
+    border: 1.4px solid black;
+    border-radius: 4px;
+}
+
+.burger-menu:hover {
+    background-color: #a3a372;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+}
+
+
+.expanded-burger-menu-around {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 52;
+    backdrop-filter: blur(5px); /*Hintergrund verschwimmmen lassen*/
+}
+
+.expanded-burger-menu {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 130px;
+    right: 2vw;
+    width: 92vw;
+    z-index: 52;
+    background-color: white;
+}
+
+.expanded-menu-1 {
+    padding: 4px;
+    border: 1.6px solid black;
+    border-collapse: collapse;
+    background-color: #a3a372;
+}
+
+.expanded-menu-1:hover {
+    cursor: pointer;
+    background-color: #606043;
+    color: white;
+}
+
+.input-2-container {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    flex-direction: column;
+}
+
+#input-2 {
+    right: 160px;
+    top: 35px;
+    height: 26px;
+    border-radius: 4px;
+    width: 90vw;
+    z-index: 4;
+    border: 3px solid #00e8ff;
+    font-size: 15px;
+    background-color: #606043;
+    margin-bottom: 7px;
+    margin-top: 5px;
+    height: 40px;
+}
+
+.search-btn {
+    height: 39px;
+    width: 50vw;
+    border-radius: 6px;
+    background-color: #d4c7b6;
+    margin-bottom: 1px;
+}
+
+.between-div {
+    height: 2.2px;
+    background-color: #caca8c;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    background-color: #606043;
+    border: 2px solid black;
+    border-radius: 50%; /* Kreisform */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: black;
+
+    position: fixed;
+    top: 100px;
+    right: 10px;
+}
+
+.circle:hover {
+    background-color: #606043;
+    color: white;
+    cursor: pointer;
+}
+
+.x {
+    transform: rotate(45deg); /* 45 Grad Drehung, um ein "X" zu erzeugen */
+    padding-left: 1.5px;
+    padding-bottom: 5.4px
+}
+
+
+
+
+
+@media (max-width: 700px) {
+
+    .header {
+        padding-left: 15vw;
+    }
+
+    #no-matches {
+        padding-left: 40px;
+    }
+}
+
+
+
+@media (max-width: 500px) {
+
+    .favourites {
+        display: none;
+    }
+
+    #input {
+        display: none;
+    }
+}
+
+@media (min-width: 500px) {
+    
+    .burger-menu {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
