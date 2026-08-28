@@ -4,6 +4,15 @@ A responsive Pokédex web application built with Vanilla JavaScript and the Poke
 
 The application loads Pokémon data from an external REST API and displays it in an interactive user interface. The project was created to practice asynchronous data handling, API integration, DOM manipulation and responsive web development.
 
+## Preview
+
+![Pokédex overview](./assets/screenshot_main.png)
+
+
+### Detailed Pokémon view
+
+![Pokémon detail view](./assets/screenshot_detail.png)
+
 
 ## Features
 - Fetches Pokémon data from the PokeAPI
